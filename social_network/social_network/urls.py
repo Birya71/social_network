@@ -17,12 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from rest_framework.routers import DefaultRouter
-from posts.views import PostViewSet, LikeViewSet, CommentViewSet, FullPostViewSet
+from posts.views import PostViewSet, LikeViewSet, CommentViewSet
 
 r = DefaultRouter()
 r.register('posts', PostViewSet)
 r.register('likes', LikeViewSet)
-r.register('post_details', FullPostViewSet)
 r.register('comments', CommentViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),

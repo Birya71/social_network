@@ -15,12 +15,12 @@ class Post(models.Model):
 
 
 class Like(models.Model):
-    likes_count = models.PositiveSmallIntegerField(null=True)
+
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='likes')
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f'{self.likes_count}'
+        return f'{self.post}'
 
 
 # для доп. задания
